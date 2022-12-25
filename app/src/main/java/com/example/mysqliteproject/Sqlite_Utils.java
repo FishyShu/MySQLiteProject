@@ -76,6 +76,8 @@ public class Sqlite_Utils {
                     cp.getType() +
                     "','" +
                     cp.getDescription() +
+                    "','" +
+                    cp.getBuilding_id() +
                     "');");
         }
 
