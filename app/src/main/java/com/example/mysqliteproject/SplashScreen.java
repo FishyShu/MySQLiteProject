@@ -38,7 +38,7 @@ public class SplashScreen extends AppCompatActivity {
                 startActivity(intent);
 
                 // finishes .this
-                finish();
+                finish(); //--> causes a crash when I used recreate();
             }
             //Delays for 5.000 Seconds
         }, 5000);

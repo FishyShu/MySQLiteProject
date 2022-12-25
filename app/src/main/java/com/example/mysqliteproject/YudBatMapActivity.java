@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -118,9 +121,21 @@ public class YudBatMapActivity extends AppCompatActivity {
                 List<String> tables = new ArrayList<>();
                 tables.add(Sqlite_Utils.TABLE_BUILDINGS_NAME);
                 tables.add(Sqlite_Utils.TABLE_ROOM_NAME);
-                for(String table : tables) {
-                    Cursor cursor = database.rawQuery("Drop Table If Exists " + table, null);
+
+
+                // Thanks random guy from the internet :L
+                for (String table : tables) {
+                    try {
+                        database.execSQL("DROP TABLE IF EXISTS " + table);
+                    } catch (SQLiteException e) {
+                        Log.e("SQLiteException", "Error dropping table: " + e.getMessage());
+                    }
                 }
+                //restarts the application :) ( IT WORKED :D )
+                Intent i = new Intent(YudBatMapActivity.this, SplashScreen.class);
+                finish();
+                startActivity(i);
+
             }
         });
 
