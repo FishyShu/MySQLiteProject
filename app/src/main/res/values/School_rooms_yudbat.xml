@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+   <!--Change the name to school_buildings when you can.-->
+   <!-- static final String TABLE_BUILDINGS_NAME = "tbl_building";
+    static final String COL_BUILDINGS_ID = "-1";
+    static final String COL_BUILDINGS_NAME = "name";
+    static final String COL_BUILDINGS_FLOOR = String.valueOf('1'); // 0 &ndash;&gt; Only has One floor, 1 &ndash;&gt; has Two floors.
+    -->
+
+   <!--Save the YudBat rooms data here before inserting them into the sqlite. [V.03] -->
+
+</resources>

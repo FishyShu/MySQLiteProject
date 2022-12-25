@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MySQLiteProject</string>
+    <string name="is_name">NAME</string>
+</resources>
