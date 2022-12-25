@@ -99,7 +99,7 @@ public class Sqlite_Utils {
         Cursor c = db.rawQuery("Select * From " + TABLE_ROOM_NAME + "", null);
         if (c.getCount() != 0) {
             while (c.moveToNext()) {
-                list.add(new Room_Information(c.getString(0), c.getString(1), c.getString(2), c.getString(3), c.getInt(4)));
+                list.add(new Room_Information(c.getString(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4)));
             }
         }
         return list;
@@ -123,31 +123,31 @@ public class Sqlite_Utils {
 
         //601
         Room_Information r1 = new Room_Information("601", "YudBatOne", "ClassRoom",
-                "Save the description in an xml :)",-1);
+                "Save the description in an xml :)","-1");
 
         //602
         Room_Information r2 = new Room_Information("602", "YudBatTwo", "ClassRoom",
-                "Save the description in an xml :)",-1);
+                "Save the description in an xml :)","-1");
 
         //603
         Room_Information r3 = new Room_Information("603", "YudBatThree", "ClassRoom",
-                "Save the description in an xml :)",-1);
+                "Save the description in an xml :)","-1");
 
         //604
         Room_Information r4 = new Room_Information("604", "YudBatFour", "ClassRoom",
-                "Save the description in an xml :)",-1);
+                "Save the description in an xml :)","-1");
 
         //605
         Room_Information r5 = new Room_Information("605", "YudBatFive", "ClassRoom",
-                "Save the description in an xml :)",-1);
+                "Save the description in an xml :)","-1");
 
         //606
         Room_Information r6 = new Room_Information("606", "YudBatSix", "ClassRoom",
-                "Save the description in an xml :)",-1);
+                "Save the description in an xml :)","-1");
 
         //608
         Room_Information r7 = new Room_Information("608", "YudBatEight", "ClassRoom",
-                "Save the description in an xml :)",-1);
+                "Save the description in an xml :)","-1");
 
 
 

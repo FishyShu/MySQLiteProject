@@ -6,10 +6,10 @@ public class Room_Information {
     private String name;
     private String type;
     private String description;
-    private Integer building_id; // Get the building's id and make it the building id :)
+    private String building_id; // Get the building's id and make it the building id :)
 
 
-    public Room_Information(String id, String name, String type, String description, Integer building_id) {
+    public Room_Information(String id, String name, String type, String description, String building_id) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -50,11 +50,11 @@ public class Room_Information {
         this.description = description;
     }
 
-    public Integer getBuilding_id() {
+    public String getBuilding_id() {
         return building_id;
     }
 
-    public void setBuilding_id(Integer building_id) {
+    public void setBuilding_id(String building_id) {
         this.building_id = building_id;
     }
 }

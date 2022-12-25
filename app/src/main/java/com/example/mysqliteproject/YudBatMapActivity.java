@@ -39,9 +39,6 @@ public class YudBatMapActivity extends AppCompatActivity {
         //Layout inflater
         inflater = getLayoutInflater();
 
-        // when press show Custom Alert that shows an Clear SQLite database.
-        btn_staff_room = findViewById(R.id.btn_staff_room);
-
         // find view by id for all the buttons :D
         implementRoomButton();
 
@@ -58,7 +55,7 @@ public class YudBatMapActivity extends AppCompatActivity {
 
             }
         };
-
+        btn_staff_room.setOnClickListener(listener);
         btn_room_601.setOnClickListener(listener);
         btn_room_602.setOnClickListener(listener);
         btn_room_603.setOnClickListener(listener);
@@ -107,6 +104,8 @@ public class YudBatMapActivity extends AppCompatActivity {
         //Layout is called activity_sqlite_clean
 
         View alertLayout = inflater.inflate(R.layout.activity_sqlite_admin_clean, null);
+        AlertDialog.Builder alert = new AlertDialog.Builder(this).setView(alertLayout);
+
         Button btn_clean = alertLayout.findViewById(R.id.btn_clean);
         btn_clean.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,6 +124,14 @@ public class YudBatMapActivity extends AppCompatActivity {
             }
         });
 
+        alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(YudBatMapActivity.this, "OK", Toast.LENGTH_SHORT).show();
+            }
+        });
+        AlertDialog dialog = alert.create();
+        dialog.show();
 
     }
 
@@ -146,7 +153,7 @@ public class YudBatMapActivity extends AppCompatActivity {
         tv_room_building_id.setText(room_list.get(i).getBuilding_id());
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this).setView(alertLayout);
-        alert.setView(alertLayout);
+        //alert.setView(alertLayout);
         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -161,6 +168,7 @@ public class YudBatMapActivity extends AppCompatActivity {
 
     private void implementRoomButton() {
 
+        btn_staff_room = findViewById(R.id.btn_staff_room);
         btn_room_601 = findViewById(R.id.btn_room_601);
         btn_room_602 = findViewById(R.id.btn_room_602);
         btn_room_603 = findViewById(R.id.btn_room_603);
