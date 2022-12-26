@@ -127,31 +127,31 @@ public class Sqlite_Utils {
 
         //601
         Room_Information r1 = new Room_Information("601", "YudBatOne", "ClassRoom",
-                "Save the description in an xml :)", "-1");
+                getDescription(1), "-1");
 
         //602
         Room_Information r2 = new Room_Information("602", "YudBatTwo", "ClassRoom",
-                "Save the description in an xml :)","-1");
+                getDescription(2),"-1");
 
         //603
         Room_Information r3 = new Room_Information("603", "YudBatThree", "ClassRoom",
-                "Save the description in an xml :)","-1");
+                getDescription(3),"-1");
 
         //604
         Room_Information r4 = new Room_Information("604", "YudBatFour", "ClassRoom",
-                "Save the description in an xml :)","-1");
+                getDescription(4),"-1");
 
         //605
         Room_Information r5 = new Room_Information("605", "YudBatFive", "ClassRoom",
-                "Save the description in an xml :)","-1");
+                getDescription(5),"-1");
 
         //606
         Room_Information r6 = new Room_Information("606", "YudBatSix", "ClassRoom",
-                "Save the description in an xml :)","-1");
+                getDescription(6),"-1");
 
         //608
         Room_Information r7 = new Room_Information("608", "YudBatEight", "ClassRoom",
-                "Save the description in an xml :)","-1");
+                getDescription(7),"-1");
 
 
 
@@ -167,11 +167,101 @@ public class Sqlite_Utils {
         return list;
     }
 
+    private static String getDescription(int i) {
+        switch(i){
+            case 1:
+                return "Classroom 601 is a spacious and well-lit classroom located on the ground " +
+                        "floor of the building. It can comfortably accommodate up to 30 students " +
+                        "at a time and is equipped with modern teaching aids such as a whiteboard," +
+                        " projector, and interactive displays. The room has a flexible seating " +
+                        "arrangement, with tables and chairs that can be rearranged to suit the " +
+                        "needs of the class. The walls are adorned with colorful posters and charts," +
+                        " creating a cheerful and engaging learning environment. Overall, Classroom" +
+                        " 601 is a welcoming and well-equipped space that is ideal for collaborative" +
+                        " learning and small group discussions.";
+            case 2:
+                return "Classroom 602 is a medium-sized classroom located on the ground floor of" +
+                        " the building. It can accommodate up to 25 students and is equipped with" +
+                        " the latest teaching technologies, including a whiteboard, projector, and" +
+                        " interactive displays. The room has a modern and functional design, with" +
+                        " comfortable seating and ample natural light. The walls are adorned with" +
+                        " educational posters and charts, creating a lively and stimulating learning" +
+                        " environment. Overall, Classroom 602 is a well-equipped and welcoming" +
+                        " space that is ideal for collaborative learning and small group discussions.";
+
+            case 3:
+                return "Classroom 603 is a bright and welcoming classroom located on the ground" +
+                        " floor of the building. It has a capacity of 35 students and is equipped" +
+                        " with state-of-the-art teaching aids such as a whiteboard, projector, and" +
+                        " interactive displays. The room has a modern and comfortable seating" +
+                        " arrangement, with tables and chairs arranged in a semi-circle. The walls" +
+                        " are adorned with inspiring quotes and educational posters, creating a" +
+                        " stimulating and inspiring learning environment. Overall, Classroom 603 is" +
+                        " a spacious and well-equipped space that is ideal for collaborative " +
+                        "learning and small group discussions.";
+
+            case 4:
+                return "Classroom 604 is a medium-sized classroom located on the same floor as" +
+                        " Classroom 601. It has a capacity of around 40 students and is equipped" +
+                        " with a range of teaching aids, including a whiteboard, projector, and" +
+                        " interactive displays. The room has large windows that allow plenty of" +
+                        " natural light to enter, creating a bright and welcoming atmosphere." +
+                        " The seating arrangement is flexible, with tables and chairs that can" +
+                        " be rearranged to suit the needs of the class. The walls are decorated" +
+                        " with a variety of educational posters and charts, providing a stimulating" +
+                        " learning environment. Overall, Classroom 604 is a well-equipped" +
+                        " and comfortable space that is ideal for both individual and group work.";
+
+            case 5:
+                return "Classroom 605 is a spacious and well-equipped classroom located on the same" +
+                        " floor as the other classrooms in the building. It has a capacity of around" +
+                        " 50 students and is equipped with all the necessary teaching aids, including" +
+                        " a whiteboard, projector, and interactive displays. The room has large" +
+                        " windows that let in plenty of natural light, creating a bright and welcoming" +
+                        " atmosphere. The seating arrangement is flexible, with tables and chairs" +
+                        " that can be rearranged to suit the needs of the class. The walls are" +
+                        " adorned with a variety of educational posters and charts, providing a" +
+                        " stimulating learning environment. This particular classroom is a favorite" +
+                        " among students and teachers alike, thanks to its comfortable and welcoming atmosphere.";
+
+            case 6:
+                return "Classroom 606 is a unique and innovative space located on the same floor as" +
+                        " the other classrooms in the building. It has a capacity of around 40" +
+                        " students and is designed to facilitate collaborative and experiential" +
+                        " learning. The room is equipped with a range of modern teaching aids," +
+                        " including a whiteboard, projector, and interactive displays." +
+                        " It also has a variety of flexible furniture, such as standing desks and" +
+                        " beanbag chairs, to accommodate different learning styles. The walls are" +
+                        " adorned with educational posters and charts, as well as a giant whiteboard" +
+                        " for brainstorming and problem-solving. Overall, Classroom 606 is a" +
+                        " dynamic and creative space that encourages students to think outside the" +
+                        " box and embrace new ideas.";
+
+            case 7:
+                return "Classroom 608 is a cozy and inviting space located on the same floor as" +
+                        " the other classrooms in the building. It has a capacity of around 30 " +
+                        "students and is decorated with a range of cultural artifacts and decor," +
+                        " creating a unique and welcoming atmosphere. The room is equipped with " +
+                        "all the necessary teaching aids, including a whiteboard, projector, and" +
+                        " interactive displays. The seating arrangement is flexible, with tables " +
+                        "and chairs that can be rearranged to suit the needs of the class. The walls" +
+                        " are adorned with educational posters and charts, as well as a variety of" +
+                        " traditional artwork and decorative items. Overall, Classroom 608 is a warm" +
+                        " and welcoming space that fosters a sense of community and cultural exchange.";
+
+            default:
+                return "ERROR";
+
+        }
+
+    }
+
 
     public static void insertToRoomsBuildingsId(SQLiteDatabase db){
 
         // retrieves  buildings_id and inserts it into tbl_building table
         Cursor cursor = db.rawQuery("Select "+COL_BUILDINGS_ID+" From "+TABLE_BUILDINGS_NAME, null);
+        //learn what .moveToFirst(); does.
         cursor.moveToFirst();
         String buildingId = cursor.getString(0);
         cursor.close();

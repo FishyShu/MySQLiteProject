@@ -24,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
         db = openOrCreateDatabase(Sqlite_Utils.DATABASE_NAME,
                 Context.MODE_PRIVATE, null);
 
+        tv_title0 = findViewById(R.id.tv_title0);
+        //draw(tv_title0);
+
+
         btn_start = findViewById(R.id.btn_start);
 
         btn_start.setOnClickListener(new View.OnClickListener() {
@@ -40,4 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+        // make the outline of tv_title0 hard
+    // private void draw(TextView tv_title0){};
 }

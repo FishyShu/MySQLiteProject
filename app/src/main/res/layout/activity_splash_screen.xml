@@ -4,16 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_splash_screen_v2"
     tools:context=".SplashScreen">
 
     <TextView
-        android:id="@+id/tv_placeHolder_ss"
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_splash"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="SplashScreen"
-        android:textSize="24sp"
+        android:alpha="75"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="Welcome to my beta :)"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="23sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.064" />
+
+    <ImageView
+        android:id="@+id/iv_cat_logo"
+        android:layout_width="410dp"
+        android:layout_height="575dp"
+        android:contentDescription="TEST"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/cat_logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

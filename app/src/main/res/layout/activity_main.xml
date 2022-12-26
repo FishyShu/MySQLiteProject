@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:guidelineUseRtl="false"
+    android:background="@drawable/background_splash_screen"
     tools:context=".MainActivity">
-
     <Button
         android:id="@+id/btn_start"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="continue to the application"
+        android:layout_height="65dp"
+        android:text="continue"
+        app:backgroundTint="@null"
+        android:background="@drawable/background_v3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -18,15 +21,62 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.342" />
 
+
+    <View
+        android:id="@+id/v_two"
+        android:layout_width="314dp"
+        android:layout_height="101dp"
+        android:alpha="0.15"
+        android:background="#6E6E6E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.082" />
+
     <TextView
         android:id="@+id/tv_title0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to WSM :D"
+        android:gravity="start"
+        android:text="Welcome Guest!"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.106" />
+        app:layout_constraintVertical_bias="0.087"
+        />
+    <TextView
+        android:id="@+id/tv_prompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:alpha="0.75"
+        android:gravity="start"
+        android:text="Please press the continue button below to start the beta"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.887"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.132" />
+    <View
+        android:id="@+id/v_one"
+        android:layout_width="300dp"
+        android:layout_height="5dp"
+        android:alpha="0.45"
+        android:background="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/btn_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_prompt"
+        app:layout_constraintVertical_bias="0.478" />
 </androidx.constraintlayout.widget.ConstraintLayout>
