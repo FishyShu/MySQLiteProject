@@ -27,6 +27,9 @@ public class SplashScreen extends AppCompatActivity {
         // inserts the data to the tables if unless the id already exists.
         Sqlite_Utils.insertToTables(db);
 
+        //Sets the buildings' id in the rooms table :D
+        Sqlite_Utils.insertToRoomsBuildingsId(db);
+
         //bla bla, delay bla bla
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {

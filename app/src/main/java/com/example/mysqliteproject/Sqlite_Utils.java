@@ -1,7 +1,9 @@
 package com.example.mysqliteproject;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -65,7 +67,7 @@ public class Sqlite_Utils {
                     "');");
         }
 
-        ArrayList<Room_Information> roomList = buildRoomsList();
+        ArrayList<Room_Information> roomList = buildRoomsList(db);
         for (Room_Information cp : roomList) {
             db.execSQL("Insert Or Ignore Into " + TABLE_ROOM_NAME +
                     " Values('" +
@@ -115,15 +117,17 @@ public class Sqlite_Utils {
         list.add(b1);
         return list;
     }
-    private static ArrayList<Room_Information> buildRoomsList() {
+    private static ArrayList<Room_Information> buildRoomsList(SQLiteDatabase db) {
         ArrayList<Room_Information> list = new ArrayList<Room_Information>();
 
-        final int ROOM_COUNT = 7;
-        /* I made the Building id = -1. */
+
+        // Yud Bat would be -1, YudAlaf would be a different number, etc...
+
+
 
         //601
         Room_Information r1 = new Room_Information("601", "YudBatOne", "ClassRoom",
-                "Save the description in an xml :)","-1");
+                "Save the description in an xml :)", "-1");
 
         //602
         Room_Information r2 = new Room_Information("602", "YudBatTwo", "ClassRoom",
@@ -163,4 +167,16 @@ public class Sqlite_Utils {
         return list;
     }
 
+
+    public static void insertToRoomsBuildingsId(SQLiteDatabase db){
+
+        // retrieves  buildings_id and inserts it into tbl_building table
+        Cursor cursor = db.rawQuery("Select "+COL_BUILDINGS_ID+" From "+TABLE_BUILDINGS_NAME, null);
+        cursor.moveToFirst();
+        String buildingId = cursor.getString(0);
+        cursor.close();
+
+        // :DDDD
+        db.execSQL("Update "+TABLE_ROOM_NAME+" Set "+COL_ROOM_BUILDING_ID+" = '" + buildingId + "' Where "+COL_ROOM_BUILDING_ID+" = '-1'");
+    }
 }

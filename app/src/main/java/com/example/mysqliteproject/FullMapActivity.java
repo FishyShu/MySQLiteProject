@@ -36,6 +36,7 @@ public class FullMapActivity extends AppCompatActivity implements View.OnClickLi
         btn_error4 = findViewById(R.id.btn_error4);
         btn_error5 = findViewById(R.id.btn_error5);
 
+
         database = openOrCreateDatabase(Sqlite_Utils.DATABASE_NAME,
                 Context.MODE_PRIVATE,
                 null);
